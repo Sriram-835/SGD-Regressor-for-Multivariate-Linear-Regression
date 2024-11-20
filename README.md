@@ -1,11 +1,30 @@
-```
+# SGD-Regressor-for-Multivariate-Linear-Regression
+
+## AIM:
+To write a program to predict the price of the house and number of occupants in the house with SGD regressor.
+
+## Equipments Required:
+1. Hardware – PCs
+2. Anaconda – Python 3.7 Installation / Jupyter notebook
+
+## Algorithm
+1.Start
+2.Data preparation
+3.Hypothesis Definition
+4.Cost Function 
+5.Parameter Update Rule 
+6.Iterative Training 
+7.Model evaluation 
+8.End 
+
+## Program:
+```python
 /*
 Program to implement the multivariate linear regression model for predicting the price of the house and number of occupants in the house with SGD regressor.
-Developed by: K SRIRAM
-RegisterNumber: 212222080052
+Developed by: Sriram K
+RegisterNumber:  212222080052
 */
-```
-```python
+
 import numpy as np
 from sklearn.datasets import fetch_california_housing
 from sklearn.linear_model import SGDRegressor
@@ -14,12 +33,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import StandardScaler
 
-
 data = fetch_california_housing()
 
-
 x= data.data[:,:3]
-
 
 y=np.column_stack((data.target,data.data[:,6]))
 
@@ -43,27 +59,33 @@ y_pred =multi_output_sgd.predict(x_test)
 
 y_pred = scaler_y.inverse_transform(y_pred)
 y_test = scaler_y.inverse_transform(y_test)
+
 print(y_pred)
-[[ 1.04860312 35.69231257]
- [ 1.49909521 35.72530255]
- [ 2.35760015 35.50646978]
- ...
- [ 4.47157887 35.06594388]
- [ 1.70991815 35.75406191]
- [ 1.79884624 35.34680017]]
+[[ 1.09542272 35.7886599 ]
+ [ 1.5319338  35.77157734]
+ [ 2.31074264 35.50215118]
+ [ 4.28276558 35.06503685]
+ [ 1.73674364 35.76683727]
+ [ 1.76282292 35.48716441]]
 
 mse = mean_squared_error(y_test,y_pred)
 
 print("Mean Squared Error:",mse)
 
-Mean Squared Error: 2.560165984862198
+Mean Squared Error: 2.5509715245097135
 
 print("\nPredictions:\n",y_pred[:5])
 Predictions:
- [[ 1.04860312 35.69231257]
- [ 1.49909521 35.72530255]
- [ 2.35760015 35.50646978]
- [ 2.73967825 35.37568192]
- [ 2.10914107 35.63894336]]
-
+ [[ 1.09542272 35.7886599 ]
+ [ 1.5319338  35.77157734]
+ [ 2.31074264 35.50215118]
+ [ 2.67260721 35.44067814]
+ [ 2.10236101 35.654292  ]]
 ```
+
+## Output:
+![Predictions](https://github.com/user-attachments/assets/041e6d5c-aebb-4a1b-87ba-95cc75300c39)
+
+
+## Result:
+Thus the program to implement the multivariate linear regression model for predicting the price of the house and number of occupants in the house with SGD regressor is written and verified using python programming.
