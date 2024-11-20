@@ -1,9 +1,11 @@
+```
 /*
 Program to implement the multivariate linear regression model for predicting the price of the house and number of occupants in the house with SGD regressor.
 Developed by: K SRIRAM
 RegisterNumber: 212222080052
-
-
+*/
+```
+```python
 import numpy as np
 from sklearn.datasets import fetch_california_housing
 from sklearn.linear_model import SGDRegressor
@@ -63,4 +65,5 @@ Predictions:
  [ 2.35760015 35.50646978]
  [ 2.73967825 35.37568192]
  [ 2.10914107 35.63894336]]
-*/
+
+```
